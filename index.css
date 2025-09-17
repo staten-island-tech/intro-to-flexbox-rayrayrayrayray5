@@ -11,9 +11,26 @@ body,
   font-size: 30px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .child {
-  border: 1px solid red;
-  width: 28%;
+  width: 20%;
+}
+
+.child-1 {
+  border: 3px solid green;
+  height: 300px;
+}
+
+.child-2 {
+  border: 3px solid yellow;
+  height: 500px;
+  flex-grow: 2;
+}
+
+.child-3 {
+  border: 3px solid blue;
+  height: 600px;
+  flex-grow: 3;
 }
