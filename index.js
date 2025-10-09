@@ -89,6 +89,16 @@ const middlePrice = [
     }
 ]
 
+function inject(item){
+//query the html where we inject the card
+
+    const container = document.querySelector(".container")
+    container.insertAdjacentHTML("afterbegin", `<h1>${item.name}</h1><h2>${item.price}</h2>`);
+
+}
+expensive.forEach((rocks) => inject(rocks));
+cheap.forEach((rocks) => inject(rocks));
+middlePrice.forEach((rocks) => inject(rocks));
 
 //created array
 //find the container using query selector
