@@ -33,6 +33,13 @@ const expensive = [
         inStock: true,
         image: "pics/lapiz lazuli.webp",
         alt: "lapis lazuli"
+    },
+    {
+        name: "Paraiba Tourmaline",
+        price: 20000,
+        inStock: true,
+        image: "pics/paraiba tourmaline.jpg",
+        alt: "paraiba tourmaline"
     }
 ]
 const cheap=[
@@ -70,6 +77,25 @@ const cheap=[
         inStock: false,
         image: "pics/shale.jpg",
         alt: "shale rock"
+    },
+    {
+        name: "Quartzolite",
+        price: 200,
+        inStock: true,
+        image: "pics/quartzolite.jpg",
+        alt: "quartzolite rock"
+    },
+    {
+        name: "Tiger's Eye",
+        price: 30,
+        inStock: true,
+        image: "pics/tigers eye.jpg",
+        alt: "tiger's eye"
+    },
+    {
+        name: "Chert",
+        price: 50,
+        in
     }
 ]
 const middlePrice = [
@@ -86,6 +112,13 @@ const middlePrice = [
         inStock: true,
         image: "pics/calcite.jpg",
         alt: "calcite rock"
+    },
+    {
+        name: "Essexite",
+        price: 500,
+        inStock: true,
+        image: "pics/essexite.jpg",
+        alt: "essexite rock"
     }
 ]
 
@@ -104,3 +137,7 @@ middlePrice.forEach((rocks) => inject(rocks));
 //find the container using query selector
 //create function to add 1 card to sceen
 
+//make array
+//put cards on screen with JS
+//make a cart (HTML, JS)
+//add to cart to button
