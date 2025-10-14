@@ -40,6 +40,20 @@ const expensive = [
         inStock: true,
         image: "pics/paraiba tourmaline.jpg",
         alt: "paraiba tourmaline"
+    },
+    {
+        name: "Blue Garnet",
+        price: 1500000,
+        inStock: true,
+        image: "pics/blue-garnet.jpg",
+        alt: "blue garnet"
+    },
+    {
+        name: "Grandidierite",
+        price: 50000,
+        inStock: false,
+        image: "pics/grandidierite.jpg",
+        alt: "grandidierite rock"  
     }
 ]
 const cheap=[
@@ -95,7 +109,16 @@ const cheap=[
     {
         name: "Chert",
         price: 50,
-        in
+        inStock: false,
+        image: "pics/chert.jpg",
+        alt: "chert image"
+    },
+    {
+        name: "River Rocks",
+        price: 15,
+        inStock: true,
+        image: "pics/river rocks.webp",
+        alt: "river rocks"
     }
 ]
 const middlePrice = [
@@ -122,17 +145,41 @@ const middlePrice = [
     }
 ]
 
+
 function inject(item){
 //query the html where we inject the card
-
     const container = document.querySelector(".container")
-    container.insertAdjacentHTML("afterbegin", `<h1>${item.name}</h1><h2>${item.price}</h2>`);
+    container.insertAdjacentHTML(
+        "afterbegin", 
+        `image`
+        `<h1>${item.name}</h1><h2>${item.price}</h2>`
+        `<button>buy now</button>`
+    );
 
 }
-expensive.forEach((rocks) => inject(rocks));
-cheap.forEach((rocks) => inject(rocks));
-middlePrice.forEach((rocks) => inject(rocks));
+stuff.forEach((element) => {
+    inject(element);
+});
 
+
+
+
+
+
+function getCards(){
+    const buttons = document.querySelectorAll("button");
+    //not needed unless we want filter etc
+    const btnArr = Array.from(buttons);
+    btnArr.forEach((btn) =>
+        btn.addEventListener("click", function (event) {
+            //console.log(event.target)
+            console.log(
+                event.target.closest(".display-card"), getAttribute("data-id"),
+                event.target.textContent
+            )
+        })
+    );
+}
 //created array
 //find the container using query selector
 //create function to add 1 card to sceen
