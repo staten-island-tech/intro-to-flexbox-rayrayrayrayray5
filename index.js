@@ -168,35 +168,30 @@ function inject(item){
     const container = document.querySelector(".container")
     container.insertAdjacentHTML(
         "afterbegin", 
-        `<div class=card">
+        `<div class=card"> data-id="${item.name}">
             <h2 class=card-header>${item.name}</h2>
             <img src="${item.image}" alt="${item.alt}" />
             <h3 class=card-price>${item.price}</h3>
-            <h4>buy now</h4>`
+            <h4 class=button>Buy Now</h4>`
     );
-
 }
 product.forEach((element) => {
     inject(element);
 });
-
-
-
 function getCards(){
-    const buttons = document.querySelectorAll("button");
+    const buttons = document.querySelectorAll(".button");
     //not needed unless we want filter etc
     const btnArr = Array.from(buttons);
     btnArr.forEach((btn) =>
         btn.addEventListener("click", function (event) {
-            //console.log(event.target)
-            console.log(
-                event.target.closest(".display-card"), getAttribute("data-id"),
-                event.target.textContent
+            console.log(event.target.closest(".card"), getAttribute("data-id"),
             );
         })
     );
 }
+getCards();
 
+cart = [];
 
 //make array
 //find item in array, .find("name")
