@@ -168,11 +168,12 @@ function inject(item){
     const container = document.querySelector(".container")
     container.insertAdjacentHTML(
         "afterbegin", 
-        `<div class=card"> data-id="${item.name}">
-            <h2 class=card-header>${item.name}</h2>
-            <img src="${item.image}" alt="${item.alt}" />
-            <h3 class=card-price>${item.price}</h3>
-            <h4 class=button>Buy Now</h4>`
+        `<div class="card" data-id="${item.name}">
+            <h2 class="card-header">${item.name}</h2>
+            <img class="card-img" src="${item.image}" alt="${item.alt}" />
+            <h3 class="card-price">$${item.price}</h3>
+            <h4 class="button">Buy Now</h4>
+        </div>`
     );
 }
 product.forEach((element) => {
@@ -184,13 +185,11 @@ function getCards(){
     const btnArr = Array.from(buttons);
     btnArr.forEach((btn) =>
         btn.addEventListener("click", function (event) {
-            console.log(event.target.closest(".card"), getAttribute("data-id"),
-            );
+            console.log(event.target.closest(".card"), getAttribute("data-id"));
         })
     );
 }
 getCards();
-
 cart = [];
 
 //make array
