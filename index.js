@@ -162,7 +162,7 @@ const product = [
 ]
 
 
-cart = []
+
 function inject(item){
 //query the html where we inject the card
     const container = document.querySelector(".container")
@@ -179,18 +179,42 @@ function inject(item){
 product.forEach((element) => {
     inject(element);
 });
+let list = []
+const cart = []
 function getCards(){
     const buttons = document.querySelectorAll(".button");
     //not needed unless we want filter etc
     buttons.forEach((btn) =>
         btn.addEventListener("click", function (event) {
-            console.log(event.target.closest(".card").getAttribute("data-id"));
-
+            item = list.push(event.target.closest(".card").getAttribute("data-id"));
+            addCart(item);
         })
     );
 }
+/* function checkCart(product){
+    const prod = {...product, quantity: 1};
+    const found = cart.find((el) => el.title === prod.title);
+    if (found) {
+        found.quantity += 1;
+    } else{
+        cart.push(prod);
+    }
+    } */
 
+getCards()
+function addCart(item){
+    let found = product.find((purchase) => product.name)
+    console.log(found);
+    const container = document.querySelector
+    container.insertAdjacentHTML(".body");
+        "afterbegin",
+        
+        `<div class="cart">
+        </div>`
+    
 
+}
+addCart()
 //make array
 //find item in array, .find("name")
 //push item to cart
