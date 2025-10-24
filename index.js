@@ -187,7 +187,7 @@ function getCards(){
     buttons.forEach((btn) =>
         btn.addEventListener("click", function (event) {
             item = list.push(event.target.closest(".card").getAttribute("data-id"));
-            addCart(item);
+            addCart();
         })
     );
 }
@@ -203,16 +203,16 @@ function getCards(){
 
 getCards()
 function addCart(item){
-    let found = product.find((purchase) => product.name)
+    let found = product.find(({name}) => name === item)
     console.log(found);
-    const container = document.querySelector
-    container.insertAdjacentHTML(".body");
+    const cart = document.querySelector(".cart");
+    cart.insertAdjacentHTML(
         "afterbegin",
-        
         `<div class="cart">
+        <h4>${found.name}</h4>
+        <h4>${found.price}</h4>
         </div>`
-    
-
+    );
 }
 addCart()
 //make array
