@@ -186,8 +186,9 @@ function getCards(){
     //not needed unless we want filter etc
     buttons.forEach((btn) =>
         btn.addEventListener("click", function (event) {
-            item = list.push(event.target.closest(".card").getAttribute("data-id"));
-            addCart();
+            const productName = event.target.closest(".card").getAttribute("data-id");
+            list.push(productName);
+            addCart(productName);
         })
     );
 }
@@ -203,12 +204,14 @@ function getCards(){
 
 getCards()
 function addCart(item){
-    let found = product.find(({name}) => name === item)
+    const found = product.find(({name}) => name === item);
     console.log(found);
-    const cart = document.querySelector(".cart");
-    cart.insertAdjacentHTML(
+
+    let cartContainer = document.querySelector(".cart");
+
+    cartContainer.insertAdjacentHTML(
         "afterbegin",
-        `<div class="cart">
+        `<div class="cart-item">
         <h4>${found.name}</h4>
         <h4>${found.price}</h4>
         </div>`
