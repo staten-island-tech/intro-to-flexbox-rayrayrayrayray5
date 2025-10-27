@@ -8,7 +8,7 @@ body,
 }
 
 body {
-  background-color: rgb(92, 88, 88);
+  background-color: rgb(177, 175, 175);
 }
 .container {
   width: 100vw;
@@ -16,6 +16,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  background-color: rgb(92, 88, 88);
 }
 
 .card {
@@ -41,7 +42,6 @@ body {
 h1 {
   font-size: 100px;
   text-align: center;
-  background-color: rgb(177, 175, 175);
   color: white;
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -75,7 +75,7 @@ h1 {
   padding-top: 20px;
 }
 
-h4 {
+button {
   font-size: 25px;
   margin-top: 15px;
   transition: scale 0.1s;
@@ -89,7 +89,7 @@ h4 {
   background: #0081fa;
   color: #ffffff;
 }
-h4:hover {
+button:hover {
   display: inline-block;
   outline: 0;
   cursor: pointer;
@@ -106,4 +106,34 @@ h4:hover {
   transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
   transform: scale(1.1);
   margin-top: 15px;
+}
+
+.remove-button {
+  margin-top: 5px;
+  margin-left: 5px;
+  background: red;
+}
+.remove-button:hover {
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  border: none;
+  padding: 0 56px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 7px;
+  font-weight: 400;
+  font-size: 16px;
+  background: red;
+  color: #ffffff;
+  box-shadow: 0 4px 14px 0 rgb(0 0 0 / 10%);
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  transform: scale(1.1);
+  margin-top: 15px;
+}
+
+h5 {
+  font-size: 25px;
+  color: #ffffff;
+  margin: 10px;
 }

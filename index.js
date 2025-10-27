@@ -172,7 +172,7 @@ function inject(item){
             <h2 class="card-header">${item.name}</h2>
             <img class="card-img" src="${item.image}" alt="${item.alt}" />
             <h3 class="card-price">$${item.price}</h3>
-            <h4 class="button">Buy Now</h4>
+            <button class="button">Buy Now</button>
         </div>`
     );
 }
@@ -212,8 +212,9 @@ function addCart(item){
     cartContainer.insertAdjacentHTML(
         "afterbegin",
         `<div class="cart-item">
-        <h4>${found.name}</h4>
-        <h4>${found.price}</h4>
+        <h5>${found.name}</h5>
+        <h5>$${found.price}</h5>
+        <button class = "remove-button">Remove</button>
         </div>`
     );
 }
