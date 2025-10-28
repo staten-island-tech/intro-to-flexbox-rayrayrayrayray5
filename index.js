@@ -219,6 +219,8 @@ function addCart(item){
     );
 }
 addCart()
+
+
 //make array
 //find item in array, .find("name")
 //push item to cart
