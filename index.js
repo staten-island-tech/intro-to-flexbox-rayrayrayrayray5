@@ -181,13 +181,17 @@ product.forEach((element) => {
 });
 let list = []
 const cart = []
+let price = 0
+
 function getCards(){
     const buttons = document.querySelectorAll(".button");
     //not needed unless we want filter etc
     buttons.forEach((btn) =>
         btn.addEventListener("click", function (event) {
             const productName = event.target.closest(".card").getAttribute("data-id");
+            const priceTotal = event.target.closest(".card").getAttribute("data-price");
             list.push(productName);
+            price += priceTotal
             addCart(productName);
         })
     );
@@ -214,12 +218,10 @@ function addCart(item){
         `<div class="cart-item">
         <h5>${found.name}</h5>
         <h5>$${found.price}</h5>
-        <button class = "remove-button">Remove</button>
         </div>`
     );
 }
 addCart()
-
 
 //make array
 //find item in array, .find("name")
