@@ -1,8 +1,3 @@
-asserts(
-    "i like boys",
-    "i dont fw girls",
-    "i am gay",
-)
 const product = [
     {
        name: "Big Mars Rock",
@@ -167,7 +162,6 @@ const product = [
 ]
 
 
-
 function inject(item){
 //query the html where we inject the card
     const container = document.querySelector(".container")
@@ -215,7 +209,6 @@ getCards()
 function addCart(item){
     const found = product.find(({name}) => name === item);
     console.log(found);
-    let priceContainer = document.queryS
     let cartContainer = document.querySelector(".cart");
 
     cartContainer.insertAdjacentHTML(
