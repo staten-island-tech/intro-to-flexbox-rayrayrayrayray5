@@ -195,15 +195,6 @@ function getCards(){
         })
     );
 }
-/* function checkCart(product){
-    const prod = {...product, quantity: 1};
-    const found = cart.find((el) => el.title === prod.title);
-    if (found) {
-        found.quantity += 1;
-    } else{
-        cart.push(prod);
-    }
-    } */
 
 getCards()
 function addCart(item){
