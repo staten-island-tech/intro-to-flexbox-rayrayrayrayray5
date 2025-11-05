@@ -184,14 +184,19 @@ let productPrices = 0
 
 function getCards(){
     const buttons = document.querySelectorAll(".button");
-    //not needed unless we want filter etc
     buttons.forEach((btn) =>
         btn.addEventListener("click", function (event) {
             const productName = event.target.closest(".card").getAttribute("data-id");
             const fakePrice = event.target.closest(".card").getAttribute("data-price");
-            individualPrice = Number(fakePrice)
-            productPrices += individualPrice
+            const individualPrice = Number(fakePrice);
+            productPrices += individualPrice;
             addCart(productName);
+        })
+    );
+    document.querySelectorAll(".filter").forEach((btn) =>
+        btn.addEventListener("click", function(event){
+            const category = event.target.dataset.class;
+            filterStuff(category);
         })
     );
 }
@@ -201,7 +206,6 @@ function addCart(item){
     const found = product.find(({name}) => name === item);
     console.log(found);
     let cartContainer = document.querySelector(".cart");
-
     cartContainer.insertAdjacentHTML(
         "afterbegin",
         `<div class="cart-item">
@@ -209,10 +213,29 @@ function addCart(item){
         <h5>$${found.price}</h5>
         </div>`
     );
-    console.log(productPrices)
+    updatePrices();
+function updatePrices(){
+    const priceDisplay = document.querySelector(".total");
+    if (!priceDisplay) {
+        document.querySelector(".cart").insertAdjacentHTML(
+            "beforeend",
+            `<h5 class="total">Total: $${productPrices}</h5>`
+        );
+    } else {
+        priceDisplay.textContent = `Total: $${productPrices}`;
+    }
 }
-addCart()
+}   
 
+function filterStuff(category){
+    const container = document.querySelector(".container");
+    container.innerHTML=""
+
+    let rocksFiltered;
+    rocksFiltered = product.filter((rock) => rock.expense === category)
+    rocksFiltered.forEach((rock) => inject(rock));
+    getCards();
+}
 //make array
 //find item in array, .find("name")
 //push item to cart
